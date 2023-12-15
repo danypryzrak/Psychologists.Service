@@ -1,0 +1,250 @@
+.visually-hidden {
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  border: 0;
+  padding: 0;
+  clip: rect(0 0 0 0);
+  -webkit-clip-path: inset(50%);
+          clip-path: inset(50%);
+  margin: -1px;
+}
+
+body {
+  font-family: Inter;
+}
+
+.container {
+  padding: 0 128px;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+p {
+  margin: 0;
+}
+
+body {
+  margin: 0;
+}
+
+.header__container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  height: 96px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-bottom: 1px solid rgba(25, 26, 21, 0.1);
+}
+
+.header__logo {
+  height: 28px;
+  width: 218px;
+}
+
+.header__buttons {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 8px;
+}
+
+.hero__container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-top: 78px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.hero__title {
+  color: #191A15;
+  font-size: 80px;
+  font-weight: 600;
+  line-height: 1.025;
+  letter-spacing: -1.6px;
+}
+
+.hero__text {
+  color: #191A15;
+  margin-top: 20px;
+  width: 510px;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 1.3333333333;
+  letter-spacing: -0.36px;
+}
+
+.hero__btn {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 18px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-top: 58px;
+  padding: 18px 50px;
+  color: #FBFBFB;
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 1.2;
+  letter-spacing: -0.2px;
+}
+
+.hero__img {
+  border-radius: 20px;
+}
+
+.hero__2 {
+  position: relative;
+}
+
+.nav__list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 40px;
+}
+
+.nav__item {
+  position: relative;
+}
+
+.nav__link {
+  text-decoration: none;
+  color: #191A15;
+  font-family: Inter;
+  font-size: 16px;
+  line-height: 1.25;
+  letter-spacing: -0.16px;
+}
+.nav__link:hover, .nav__link:focus {
+  color: #54BE96;
+}
+
+.nav__link--current::after {
+  content: "";
+  width: 8px;
+  height: 8px;
+  border-radius: 100%;
+  background-color: #54BE96;
+  position: absolute;
+  bottom: -16px;
+  left: 48%;
+}
+
+.btn--white {
+  border-radius: 30px;
+  border: 1px solid rgba(25, 26, 21, 0.2);
+  color: #191A15;
+  background-color: transparent;
+}
+.btn--white:hover {
+  background-color: #36A379;
+  cursor: pointer;
+}
+
+.btn--green {
+  border-radius: 30px;
+  border: none;
+  color: #FBFBFB;
+  background-color: #54BE96;
+}
+.btn--green:hover {
+  background-color: #36A379;
+  cursor: pointer;
+}
+
+.btn__login {
+  padding: 14px 39px;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.25;
+  letter-spacing: -0.16px;
+}
+
+.btn__reg {
+  padding: 14px 40px;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.25;
+  letter-spacing: -0.16px;
+}
+
+.green-box {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 311px;
+  height: 118px;
+  border-radius: 20px;
+  background: #54BE96;
+  position: absolute;
+  left: -111px;
+  bottom: 75px;
+  gap: 16px;
+}
+
+.green-box__svg {
+  padding: 12px;
+  background-color: #FBFBFB;
+  border-radius: 10px;
+}
+
+.green-box__text {
+  color: rgba(251, 251, 251, 0.5);
+  font-size: 14px;
+}
+
+.green-box__number {
+  margin-top: 8px;
+  color: #FBFBFB;
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.purple-box {
+  position: absolute;
+  left: -39px;
+  top: 185px;
+  background-color: #4535AF;
+  padding: 14px 20px;
+  -webkit-transform: rotate(-30deg);
+          transform: rotate(-30deg);
+  border-radius: 18px;
+}
+
+.orange-box {
+  position: absolute;
+  right: -40px;
+  top: 38px;
+  background-color: #FBC75E;
+  padding: 16px;
+  -webkit-transform: rotate(30deg);
+          transform: rotate(30deg);
+  border-radius: 18px;
+}/*# sourceMappingURL=main.css.map */

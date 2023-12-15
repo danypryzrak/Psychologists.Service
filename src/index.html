@@ -5,25 +5,89 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Psychologists Service</title>
-    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="css/main.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
 </head>
 
 <body>
-    <h1 class="title">Hello look console</h1>
-    <ul>
+    <header>
+        <div class="header__container container">
+            <svg class="header__logo">
+                <use href="./image/symbol-defs.svg#logo"></use>
+            </svg>
+            <ul class="nav__list">
+                <li class="nav__item">
+                    <a class="nav__link " href="./index.html">Home</a>
+                </li>
+                <li class="nav__item">
+                    <a class="nav__link nav__link--current" href="./psychologists.html">Psychologists</a>
+                </li>
+                <li class="nav__item">
+                    <a class="nav__link" href="./favorites.html">Favorites</a>
+                </li>
+            </ul>
+            <ul class="header__buttons">
+                <li>
+                    <button class="btn__login btn--white" type="button">
+                        Log In
+                    </button>
+                </li>
+                <li>
+                    <button class=" btn__reg btn--green" type="button">
+                        Registration
+                    </button>
+                </li>
+            </ul>
 
-        <li>
-            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Enim blanditiis quaerat itaque, nesciunt modi
-                aperiam eum reiciendis rerum, perferendis dignissimos earum doloremque. Quisquam optio temporibus
-                dolorem sint dolore odit ad!</p>
-        </li>
-        <li>
-            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ab porro dolores exercitationem sit id,
-                doloribus quis libero veritatis natus repellendus vitae quam quasi assumenda, iusto nihil nostrum!
-                Architecto, ea sunt.</p>
-        </li>
-        <p>все работает</p>
-    </ul>
+        </div>
+    </header>
+
+    <main>
+        <div class="hero__container container">
+            <div class="hero__1">
+                <h1 class="hero__title">The road to the <span style="font-style: italic; color: #54BE96;">depths</span>
+                    of the human
+                    soul</h1>
+                <p class="hero__text">
+                    We help you to reveal your potential, overcome challenges and find a guide in your own life with the
+                    help of our
+                    experienced psychologists.
+                </p>
+                <button class="hero__btn btn--green" type="button">
+                    Get started
+                    <svg style="width: 18px; height: 18px;">
+                        <use href="./image/symbol-defs.svg#arrow"></use>
+                    </svg>
+                </button>
+            </div>
+            <div class="hero__2">
+                <img class="hero__img" src="./image/main-foto.jpg" alt="women in glasses">
+                <div class="green-box">
+                    <div>
+                        <svg class="green-box__svg" style="width: 30px; height: 30px;">
+                            <use href="./image/symbol-defs.svg#check"></use>
+                        </svg>
+                    </div>
+                    <div>
+                        <p class="green-box__text">Experienced psychologists</p>
+                        <p class="green-box__number">15,000</p>
+                    </div>
+                </div>
+                <div class="purple-box">
+                    <svg style="width: 10px; height: 17px;">
+                        <use href="./image/symbol-defs.svg#question"></use>
+                    </svg>
+                </div>
+                <div class="orange-box">
+                    <svg style="width: 19px; height: 19px; fill:white;">
+                        <use href="./image/symbol-defs.svg#users"></use>
+                    </svg>
+                </div>
+            </div>
+        </div>
+    </main>
 </body>
 
 </html>

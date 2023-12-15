@@ -1,0 +1,17 @@
+.header__container{
+    display: flex;
+    justify-content: space-between;
+    height: 96px;
+    align-items: center;
+    border-bottom: 1px solid rgba(25, 26, 21, 0.1);;
+}
+
+.header__logo{
+    height: 28px;
+    width: 218px;
+}
+
+.header__buttons{
+    display: flex;
+    gap: 8px;
+}

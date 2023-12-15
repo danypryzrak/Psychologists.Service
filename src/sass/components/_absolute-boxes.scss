@@ -1,0 +1,52 @@
+.green-box{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 311px;
+    height: 118px;
+    border-radius: 20px;
+    background: $brand;
+    position: absolute;
+    left: -111px;
+    bottom: 75px;
+    gap: 16px;
+}
+
+.green-box__svg{
+    padding: 12px;
+    background-color: $light;
+    border-radius: 10px;
+}
+
+.green-box__text{
+    color: rgba(251, 251, 251, 0.50);
+    font-size: 14px;
+}
+
+.green-box__number{
+    margin-top: 8px;
+    
+    color: $light;
+    font-size: 24px;
+    font-weight: 700;
+}
+
+.purple-box{
+    position: absolute;
+    left: -39px;
+    top: 185px;
+    background-color: #4535AF;
+    padding: 14px 20px;
+    transform: rotate(-30deg);
+    border-radius: 18px;
+}
+
+.orange-box{
+    position: absolute;
+    right: -40px;
+    top: 38px;
+    background-color: #FBC75E;
+    padding: 16px;
+    transform: rotate(30deg);
+    border-radius: 18px;
+}

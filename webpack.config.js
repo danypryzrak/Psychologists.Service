@@ -25,9 +25,24 @@ module.exports = {
       filename: 'index.html',
       chunks: ['index'],
     }),
+    new HtmlWebpackPlugin({
+      template: './src/psychologists.html',
+      filename: 'psychologists.html',
+      chunks: ['index'],
+    }),
+    new HtmlWebpackPlugin({
+      template: './src/favorites.html',
+      filename: 'favorites.html',
+      chunks: ['index'],
+    }),
     new CopyWebpackPlugin({
       patterns: [
-        { from: './src/styles', to: 'styles' }, // Копируем папку со стилями в dist
+        { from: './src/css', to: 'css' }, // Копируем папку со стилями в dist
+      ],
+    }),
+    new CopyWebpackPlugin({
+      patterns: [
+        { from: './src/image', to: 'image' }, // Копируем папку со стилями в dist
       ],
     }),
   ],
