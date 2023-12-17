@@ -1,0 +1,192 @@
+.doctors__div{
+    margin-top: 32px;
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+}
+
+.doctor__card{
+    padding: 24px;
+    display: flex;
+    width: 1184px;
+
+border-radius: 24px;
+background: #FBFBFB;
+gap: 24px;
+}
+
+.doctor__avatar{
+padding: 12px;
+height: 96px;
+
+border-radius: 30px;
+border: 2px solid rgba(84, 190, 150, 0.20);
+}
+
+.doctor__img{
+    width: 96px;
+    height: 96px;
+    border-radius: 15px;
+}
+
+.doctor__info{
+    width: 100%;
+}
+
+.doctor__1{
+    display: flex;
+    justify-content: space-between;
+}
+
+.doctor__psych{
+    color: #8A8A89;
+
+font-size: 16px;
+font-weight: 500;
+line-height: calc(24/16); 
+}
+
+.doctor__name{
+    color: #191A15;
+    margin-top: 8px;
+
+font-size: 24px;
+font-weight: 500;
+line-height: calc(24/24);
+}
+
+.doctor__1-1{
+    display: flex;
+    align-items: center;
+    height: 24px;
+}
+
+.doctor__star{
+    fill: #FFC531;
+    width: 16px;
+    height: 16px;
+}
+
+.doctor__rating{
+    color: #191A15;
+    margin-left: 8px;
+    margin-right: 16px;
+font-size: 16px;
+font-weight: 500;
+line-height: calc(24/16);
+}
+
+.doctor__price{
+    color: #191A15;
+margin-left: 16px;
+font-size: 16px;
+font-weight: 500;
+line-height: calc(24/16);
+}
+
+.doctor__heart{
+    margin-left: 28px;
+width: 26px;
+height: 26px;
+fill: $brand;
+}
+
+.doctor__characteristics{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px;
+    width: 90%;
+    margin-top: 24px;
+}
+
+.doctor__characteristic{
+    color: #191A15;
+
+font-size: 16px;
+font-weight: 500;
+line-height: calc(24/16);
+
+border-radius: 24px;
+background: #F3F3F3;
+padding: 8px 16px;
+}
+
+.doctor__discr{
+    margin-top: 24px;
+    margin-bottom: 14px;
+
+    color: rgba(25, 26, 21, 0.50);
+
+font-size: 16px;
+font-weight: 400;
+line-height: calc(20/16);
+}
+
+.doctor__more{
+    color: #191A15;
+    
+cursor: pointer;
+font-size: 16px;
+padding-top: 4px;
+font-weight: 500;
+line-height: calc(24/16);
+text-decoration-line: underline;
+}
+
+.doctor__reviews{
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    margin-top: 48px;
+}
+
+
+
+.review__block{
+    display: flex;
+    gap: 12px;
+}
+
+.review__avatar{
+width: 44px;
+height: 44px;
+border-radius: 100px;
+background: rgba(84, 190, 150, 0.20);
+display: flex;
+align-items: center;
+justify-content: center;
+}
+
+.review__letter{
+color: #54BE96;
+font-size: 20px;
+font-weight: 500;
+line-height: calc(20/20);
+}
+
+.review__name{
+    color: #191A15;
+
+font-size: 16px;
+font-weight: 500;
+line-height: calc(20/16);
+}
+
+.review__rating{
+    display: flex;
+    align-items: center;
+    color: #191A15;
+
+font-size: 14px;
+font-weight: 500;
+gap: 8px;
+}
+
+.review__text{
+    color: rgba(25, 26, 21, 0.50);
+    margin-top: 16px;
+
+font-size: 16px;
+font-weight: 400;
+line-height: calc(20/16);
+}

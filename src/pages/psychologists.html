@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Psychologists Service</title>
+    <title>Document</title>
     <link rel="stylesheet" href="css/main.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -22,7 +22,7 @@
                     <a class="nav__link " href="./index.html">Home</a>
                 </li>
                 <li class="nav__item">
-                    <a class="nav__link" href="./psychologists.html">Psychologists</a>
+                    <a class="nav__link nav__link--current" href="./psychologists.html">Psychologists</a>
                 </li>
                 <li class="nav__item">
                     <a class="nav__favorites" href="./favorites.html">Favorites</a>
@@ -53,50 +53,29 @@
 
         </div>
     </header>
-
     <main>
-        <div class="hero__container container">
-            <div class="hero__1">
-                <h1 class="hero__title">The road to the <span style="font-style: italic; color: #54BE96;">depths</span>
-                    of the human
-                    soul</h1>
-                <p class="hero__text">
-                    We help you to reveal your potential, overcome challenges and find a guide in your own life with the
-                    help of our
-                    experienced psychologists.
-                </p>
-                <button class="hero__btn btn--green" type="button">
-                    Get started
-                    <svg style="width: 18px; height: 18px;">
-                        <use href="./image/symbol-defs.svg#arrow"></use>
-                    </svg>
-                </button>
+
+        <div class="container container__psych">
+
+            <div class="select__box">
+                <label class="doctors__label" for="filter">Filter</label>
+                <select class="doctors__select" id="filter" name="size">
+                    <option value="az" selected>A to Z</option>
+                    <option value="za">Z to A</option>
+                    <option value="from expensive">From expensive</option>
+                    <option value="from cheap">From cheap</option>
+                    <option value="from popular">Popular</option>
+                    <option value="from unpopular">Not popular</option>
+                    <option value="all">Show all</option>
+                </select>
             </div>
-            <div class="hero__2">
-                <img class="hero__img" src="./image/main-foto.jpg" alt="women in glasses">
-                <div class="green-box">
-                    <div>
-                        <svg class="green-box__svg" style="width: 30px; height: 30px;">
-                            <use href="./image/symbol-defs.svg#check"></use>
-                        </svg>
-                    </div>
-                    <div>
-                        <p class="green-box__text">Experienced psychologists</p>
-                        <p class="green-box__number">15,000</p>
-                    </div>
-                </div>
-                <div class="purple-box">
-                    <svg style="width: 10px; height: 17px;">
-                        <use href="./image/symbol-defs.svg#question"></use>
-                    </svg>
-                </div>
-                <div class="orange-box">
-                    <svg style="width: 19px; height: 19px; fill:white;">
-                        <use href="./image/symbol-defs.svg#users"></use>
-                    </svg>
-                </div>
+
+
+            <div class="doctors__div">
+
             </div>
         </div>
+
     </main>
 
     <div class="modal__overlay modal-log">
@@ -138,7 +117,6 @@
 
         </div>
     </div>
-
 </body>
 
 </html>

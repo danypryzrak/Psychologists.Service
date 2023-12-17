@@ -26,12 +26,12 @@ module.exports = {
       chunks: ['index'],
     }),
     new HtmlWebpackPlugin({
-      template: './src/psychologists.html',
+      template: './src/pages/psychologists.html',
       filename: 'psychologists.html',
       chunks: ['index'],
     }),
     new HtmlWebpackPlugin({
-      template: './src/favorites.html',
+      template: './src/pages/favorites.html',
       filename: 'favorites.html',
       chunks: ['index'],
     }),
