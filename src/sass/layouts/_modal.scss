@@ -70,3 +70,96 @@ justify-content: center;
 align-items: center;
  margin-top: 40px;
 }
+
+.modal__content-termin{
+     position: relative;
+    padding: 40px 64px;
+    width: 500px;
+    display: flex;
+    flex-direction: column;
+    background-color: $light;
+    border-radius: 30px;
+}
+
+.modal__doctor{
+    display: flex;
+    gap: 14px;
+    margin-top: 32px;
+}
+
+.modal__foto{
+width: 44px;
+height: 44px;
+border-radius: 15px;
+}
+
+.modal__psych{
+color: #8A8A89;
+
+font-size: 12px;
+font-weight: 500;
+line-height: calc(16/12);
+}
+
+.modal__name{
+    color: #191A15;
+
+font-size: 16px;
+font-weight: 500;
+line-height: calc(24/16);
+}
+
+.modal__form-termin{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-top: 32px;
+}
+
+.termin__input{
+    width: 100%;
+    padding: 10px 18px;
+    border-radius: 12px;
+    border: 1px solid rgba(25, 26, 21, 0.10);
+    margin-top: 16px;
+
+    color: #191A15;
+
+font-family: Inter;
+font-size: 16px;
+font-style: normal;
+font-weight: 400;
+line-height: 20px; 
+}
+
+.termin__input--small{
+    box-sizing: border-box;
+    width: 48%;
+    padding: 10px 18px;
+    border-radius: 12px;
+    border: 1px solid rgba(25, 26, 21, 0.10);
+
+    color: #191A15;
+
+font-family: Inter;
+font-size: 16px;
+font-style: normal;
+font-weight: 400;
+line-height: 20px; 
+
+    &:not(:first-child){
+        margin-top: 16px;
+    }
+}
+
+.termin__submit{
+    display: flex;
+width: 100%;
+padding: 16px 0;
+justify-content: center;
+align-items: center;
+margin-top: 40px;
+}
+
+
+

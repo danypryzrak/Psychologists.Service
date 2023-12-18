@@ -1,76 +1,88 @@
 import Notiflix from "notiflix";
-import { firebaseConfig, app, auth, db } from "./fireBase";
+import { db } from "./fireBase";
 import { getDatabase, ref, set, push, get, child, query, orderByChild, orderByValue, } from 'firebase/database';
-import { cardsMarkup, readMore } from "./cardsMarkup";
+import { cardsMarkup, makeTermin, readMore } from "./cardsMarkup";
+import { addToFavorite } from "./favorites";
 
-const select = document.querySelector(".doctors__select");
-const itemPerPage = 3
-let currentPage = 1
+let sortedDoctors
 
-function loadMoreDoctors() {
-    const startIndex = (currentPage - 1) * itemsPerPage;
-    const endIndex = startIndex + itemsPerPage;
-    const doctorsOnPage = allDoctors.slice(0, endIndex); // Используйте ваш запрос к базе данных
+if (document.location.pathname === '/psychologists.html') {
+    
+    const select = document.querySelector(".doctors__select");
+    const loadMoreBtn = document.querySelector(".btn__loadMore");
 
-    // Отобразите новых докторов на странице
-    displayDoctors(doctorsOnPage);
+    const itemsPerPage = 3
+    let currentPage = 1
+    
 
-    // Увеличьте текущую страницу для следующей загрузки
-    currentPage++;
-}
+    async function handleSelectChange() {
+        const doctorsDiv = document.querySelector(".doctors__div")
+        doctorsDiv.innerHTML = "";
+        currentPage = 1
+        try {
 
-
-async function handleSelectChange() {
-    const doctorsDiv = document.querySelector(".doctors__div")
-    doctorsDiv.innerHTML = "";
-    try {
-
-        const alphabetDoctors = query(ref(db, 'doctors'));
-        const snapshot = await get(alphabetDoctors);
-        const doctorsObj = snapshot.val();
-        const doctors = Object.values(doctorsObj)
-        const selectedValue = select.value
-        let sortedDoctors 
+            const alphabetDoctors = query(ref(db, 'doctors'));
+            const snapshot = await get(alphabetDoctors);
+            const doctorsObj = snapshot.val();
+            const doctors = Object.values(doctorsObj)
+            const selectedValue = select.value
         
-switch (selectedValue) {
-            case 'za':
-                sortedDoctors = doctors.sort((a, b) => {
-                const nameA = a.name.toLowerCase();
-                const nameB = b.name.toLowerCase();
-                return nameB.localeCompare(nameA);
-                });
+        
+            switch (selectedValue) {
+                case 'za':
+                    sortedDoctors = doctors.sort((a, b) => {
+                        const nameA = a.name.toLowerCase();
+                        const nameB = b.name.toLowerCase();
+                        return nameB.localeCompare(nameA);
+                    });
 
-                break;
-            case 'from expensive':
-                sortedDoctors = doctors.sort((a, b) => b.price_per_hour - a.price_per_hour);
+                    break;
+                case 'from expensive':
+                    sortedDoctors = doctors.sort((a, b) => b.price_per_hour - a.price_per_hour);
                 
-                break;
-            case 'from cheap':
-                sortedDoctors = doctors.sort((a, b) => a.price_per_hour - b.price_per_hour);
+                    break;
+                case 'from cheap':
+                    sortedDoctors = doctors.sort((a, b) => a.price_per_hour - b.price_per_hour);
 
-                break;
+                    break;
 
-            default:
-                sortedDoctors = doctors.sort((a, b) => {
-                const nameA = a.name.toLowerCase();
-                const nameB = b.name.toLowerCase();
-                return nameA.localeCompare(nameB);
-                });
+                default:
+                    sortedDoctors = doctors.sort((a, b) => {
+                        const nameA = a.name.toLowerCase();
+                        const nameB = b.name.toLowerCase();
+                        return nameA.localeCompare(nameB);
+                    });
 
-                break;
+                    break;
             
-        }
-        cardsMarkup(sortedDoctors)
-        readMore()
+            }
+
         
-    } catch (error) {
-        console.error('Error:', error.message);
+        } catch (error) {
+            console.error('Error:', error.message);
+        }
+        loadMoreDoctors()
     }
 
+    function loadMoreDoctors() {
+        const startIndex = (currentPage - 1) * itemsPerPage;
+        const endIndex = startIndex + itemsPerPage;
+        const doctorsOnPage = sortedDoctors.slice(startIndex, endIndex); // Используйте ваш запрос к базе данных
+
+        // Отобразите новых докторов на странице
+        cardsMarkup(doctorsOnPage);
+        readMore()
+        makeTermin()
+        addToFavorite(sortedDoctors)
+
+        // Увеличьте текущую страницу для следующей загрузки
+        currentPage++;
     }
 
-    // Добавляем слушатель события 'change' для <select>
-select.addEventListener('change', handleSelectChange);
+    select.addEventListener('change', handleSelectChange);
+    
+    loadMoreBtn.addEventListener("click", loadMoreDoctors)
 
-    // Вызываем функцию обработки события при загрузке страницы
     handleSelectChange();
+
+}

@@ -6,12 +6,15 @@ const logBtn = document.querySelector(".btn__login")
 const regBtn = document.querySelector(".btn__reg")
 const logModal = document.querySelector(".modal-log")
 const regModal = document.querySelector(".modal-reg")
+const terminModal = document.querySelector(".modal-termin")
 const closeModalLog = document.querySelector(".close-log")
 const closeModalReg = document.querySelector(".close-reg")
+const closeModalTermin = document.querySelector(".close-termin")
 const logForm = document.querySelector(".log-form")
 const regForm = document.querySelector(".reg-form")
+const terminForm = document.querySelector(".modal__form-termin")
 
-
+if (document.location.pathname !== '/favorites.html') {
 
 logBtn.addEventListener("click", () => {
     logModal.style.display = "flex"
@@ -23,11 +26,9 @@ regBtn.addEventListener("click", () => {
 
 closeModalLog.addEventListener("click", () => {
     logModal.style.display = "none";
-    
 })
 
 closeModalReg.addEventListener("click", () => {
-    
     regModal.style.display = "none";
 })
 
@@ -96,3 +97,24 @@ regForm.addEventListener("submit", (ev) => {
     
 })
 
+}
+
+if (document.location.pathname !== '/index.html') {
+
+    closeModalTermin.addEventListener("click", () => {
+        terminModal.style.display = "none";
+    })
+
+    terminForm.addEventListener("submit", (ev) => {
+        ev.preventDefault()
+        terminModal.style.display = "none";
+        Notiflix.Notify.success("Your psychologist will contact with you soon")
+    })
+
+    window.addEventListener('click', function (event) {
+        if (event.target === terminModal) {
+            terminModal.style.display = "none";
+        }
+    });
+
+}

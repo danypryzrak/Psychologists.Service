@@ -1,13 +1,13 @@
 import { initializeApp } from 'firebase/app';
 import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword } from 'firebase/auth';
 import { getDatabase, ref, set, push, get, child } from 'firebase/database';
-import { isLogedIn } from './isLogIn';
+import { isLogedIn, isLogedOut } from './isLogIn';
 
 if (localStorage.getItem("userData") !== null) {
 isLogedIn()
 }
 
-
+const logOutButton = document.querySelector(".btn__logOut")
 
 export const firebaseConfig = {
   apiKey: "AIzaSyBNjOUTkhaZnuYlElXhJb1oAsh2cNbb8TU",
@@ -26,18 +26,14 @@ export const db = getDatabase(app);
 
 export async function registerUser(name, email, password) {
   try {
-    // Создание пользователя в Firebase Authentication
     const userCredential = await createUserWithEmailAndPassword(auth, email, password);
 
-    // Получение идентификатора нового пользователя
     const userId = userCredential.user.uid;
 
     set(ref(db, 'users/' + userId), {
     username: name,
     email: email
     });
-    
-
     console.log('User registered successfully');
   } catch (error) {
     console.error('Registration error:', error.message);
@@ -46,10 +42,9 @@ export async function registerUser(name, email, password) {
 
 export async function loginUser(email, password) {
   try {
-    // Вход пользователя в Firebase Authentication
     const userCredential = await signInWithEmailAndPassword(auth, email, password);
 
-    // Получение информации о пользователе из Realtime Database по его уникальному идентификатору
+    
     const userId = userCredential.user.uid;
     const dbRef = ref(getDatabase())
     const snapshot = await get(child(dbRef, `users/${userId}`))
@@ -64,3 +59,10 @@ export async function loginUser(email, password) {
     console.error('Login error:', error.message);
   }
 }
+
+function logOutUser() {
+  localStorage.removeItem("userData")
+  isLogedOut()
+}
+
+logOutButton.addEventListener('click', logOutUser)
